@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+PUT     /transactionservice/transaction/:transaction_id     controllers.TransactionController.insertTransaction(transaction_id: Long)
+GET     /transactionservice/transaction/:transaction_id     controllers.TransactionController.getTransaction(transaction_id: Long)
+GET     /transactionservice/types/:type                     controllers.TransactionController.getTransactionByType(type: String)
+GET     /transactionservice/sum/:transaction_id             controllers.TransactionController.getSumTransaction(transaction_id: Long)
