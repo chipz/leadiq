@@ -42,7 +42,7 @@ class TransactionModelSpec extends Specification with Mockito {
       TransactionModel.sum(t1.id) must beEqualTo(amountT1)
     }
 
-    "must return a sum of all transactions that are transitively linked by their parent_id to" in new scoping {
+    "must return a sum of all transactions that are transitively linked by their parent_id" in new scoping {
       TransactionModel.sum(3) must beEqualTo(amountT3 + amountT4)
     }
 
